@@ -1,0 +1,9 @@
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\bin\Debug\netcoreapp3.1\LMS.Core.deps.json
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\bin\Debug\netcoreapp3.1\LMS.Core.dll
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\bin\Debug\netcoreapp3.1\LMS.Core.pdb
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\obj\Debug\netcoreapp3.1\LMS.Core.csprojAssemblyReference.cache
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\obj\Debug\netcoreapp3.1\LMS.Core.AssemblyInfoInputs.cache
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\obj\Debug\netcoreapp3.1\LMS.Core.AssemblyInfo.cs
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\obj\Debug\netcoreapp3.1\LMS.Core.csproj.CoreCompileInputs.cache
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\obj\Debug\netcoreapp3.1\LMS.Core.dll
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Core\obj\Debug\netcoreapp3.1\LMS.Core.pdb

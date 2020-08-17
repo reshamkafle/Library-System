@@ -1,0 +1,32 @@
+<h1>Library</h1>
+<table class="table">
+    <thead>
+        <td>Title</td>
+        <td>Author</td>
+        <td>ISBN</td>
+        <td>Year</td>
+        <td>Publisher</td>
+        <td>Cost</td>
+        <td>Media Type</td>
+        <td>Total Available</td>
+        <td>Remaining Qty</td>
+        <td></td>
+    </thead>
+    <tbody *ngIf="medias">
+        <tr *ngFor="let media of medias">
+            <td>{{media.title}}</td>
+            <td>{{media.authorName}}</td>
+            <td>{{media.isbn}}</td>
+            <td>{{media.year}}</td>
+            <td>{{media.publisherName}}</td>
+            <td>{{media.cost}}</td>
+            <td>{{media.mediaTypeName}}</td>
+            <td>{{media.totalQty}}</td>
+            <td>{{media.balanceQty}}</td>
+            <td>  
+                <button class= 'btn btn-primary btn-sm' (click)="reserve(media.id)">reserve</button> | 
+                <button class= 'btn btn-info btn-sm' (click)="borrow(media.id)">Borrow</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

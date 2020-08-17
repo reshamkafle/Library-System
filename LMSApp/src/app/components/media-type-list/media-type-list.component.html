@@ -1,0 +1,59 @@
+<h2>MediaType List</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/setup']">Setup</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Media Type</li>
+    </ol>
+</nav>
+<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+<button type="button" id="btnAddMediaTypeModal" class="btn btn-primary" data-toggle="modal" (click)="clearModal()" data-target="#addMediaTypeModal"> Add New MediaType</button>
+  <br />
+  <!-- Modal -->
+  <div class="modal fade" id="addMediaTypeModal" tabindex="-1" role="dialog" aria-labelledby="addMediaTypeLabel" aria-hidden="true">
+    <form [formGroup]="registerMediaType" (ngSubmit)="onSubmit()">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add MediaType</h5>
+                <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <input type="hidden" id="typeId" />
+                        <div class="form-group col">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" formControlName="name" id="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors.required">Name is required</div>
+                                </div>
+                            </div>                              
+                        </div>
+                    </div>           
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>       
+            </div>      
+        </div>
+    </form>
+  </div>
+  <br />
+<table class="table">
+    <thead>
+        <td>Name</td>
+        <td></td>
+    </thead>
+    <tbody *ngIf="types">
+        <tr *ngFor="let type of types">
+            <td>{{type.name}}</td>
+            <td>  
+                <button class= 'btn btn-info btn-sm' (click)="updateMediaType(type.id)">Edit</button> | 
+                <button class= 'btn btn-danger btn-sm' (click)="deleteMediaType(type.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

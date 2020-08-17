@@ -1,0 +1,15 @@
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Core.dll
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.csprojAssemblyReference.cache
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.AssemblyInfoInputs.cache
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.AssemblyInfo.cs
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Service.deps.json
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Service.runtimeconfig.json
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Service.runtimeconfig.dev.json
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Service.dll
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Service.pdb
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\bin\Debug\netcoreapp3.1\LMS.Core.pdb
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.csproj.CopyComplete
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.dll
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.pdb
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.genruntimeconfig.cache
+C:\Users\resham\Documents\GitHub\Library-Management-System\LMS\LMS.Service\obj\Debug\netcoreapp3.1\LMS.Service.csproj.CoreCompileInputs.cache

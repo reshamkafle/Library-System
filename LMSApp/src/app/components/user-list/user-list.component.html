@@ -1,0 +1,119 @@
+<h2>User List</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/setup']">Setup</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User</li>
+    </ol>
+</nav>
+<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+<button type="button" id="btnAddUserModal" class="btn btn-primary" data-toggle="modal" (click)="clearModal()" data-target="#addUserModal"> Add New User</button>
+  <br />
+  <!-- Modal -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserLabel" aria-hidden="true">
+    <form [formGroup]="registerUser" (ngSubmit)="onSubmit()">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <input type="hidden" id="userId" />
+                        <div class="form-group col">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" formControlName="username" id="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Username is required</div>
+                                </div>
+                            </div> 
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" formControlName="password" id="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                </div>
+                            </div>   
+                            <div class="form-group">
+                                <label>Firstname</label>
+                                <input type="text" formControlName="firstName" id="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.firstName.errors.required">Firstname is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Lastname</label>
+                                <input type="text" formControlName="lastName" id="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lastName.errors.required">Lastname is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Library Card Number</label>
+                                <input type="text" formControlName="libraryCardNumber" id="libraryCardNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.libraryCardNumber.errors }" />
+                                <div *ngIf="submitted && f.libraryCardNumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.libraryCardNumber.errors.required">Library Card Number is required</div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>           
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>       
+            </div>      
+        </div>
+    </form>
+  </div>
+  <br />
+<table class="table">
+    <thead>
+        <td>Username</td>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Library Card Number</td>
+        <td></td>
+    </thead>
+    <tbody *ngIf="users">
+        <tr *ngFor="let user of users">
+            <td>{{user.userName}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.libraryCardNumber}}</td>
+            <td>  
+                <button class= 'btn btn-info btn-sm' (click)="updateUser(user.id)">Edit</button> | 
+                <button class= 'btn btn-warning btn-sm' (click)="resetPassword(user.id)">Reset Password</button> | 
+                <button class= 'btn btn-danger btn-sm' (click)="deleteUser(user.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="btnChangePassword" type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePassword">ChangePassword</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePasswordLabel">Reset Password</h5>
+          <button type="button" #closebutton2 class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <input type="password" id="changePasswordtext" class="form-control" />
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="resetPasswordSubmit()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

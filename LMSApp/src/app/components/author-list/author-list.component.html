@@ -1,0 +1,67 @@
+<h2>Author List</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/setup']">Setup</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Author</li>
+    </ol>
+</nav>
+<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+<button type="button" id="btnAddAuthorModal" class="btn btn-primary" data-toggle="modal" (click)="clearModal()" data-target="#addAuthorModal"> Add New Author</button>
+  <br />
+  <!-- Modal -->
+  <div class="modal fade" id="addAuthorModal" tabindex="-1" role="dialog" aria-labelledby="addAuthorLabel" aria-hidden="true">
+    <form [formGroup]="registerAuthor" (ngSubmit)="onSubmit()">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Author</h5>
+                <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                        <div class="form-row">
+                            <input type="hidden" id="authorId" />
+                            <div class="form-group col">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" formControlName="firstName" id="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" formControlName="lastName" id="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>           
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>       
+            </div>      
+        </div>
+    </form>
+  </div>
+  <br />
+<table class="table">
+    <thead>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td></td>
+    </thead>
+    <tbody *ngIf="authors">
+        <tr *ngFor="let author of authors">
+            <td>{{author.firstName}}</td>
+            <td>{{author.lastName}}</td>
+            <td>  
+                <button class= 'btn btn-info btn-sm' (click)="updateAuthor(author.id)">Edit</button> | 
+                <button class= 'btn btn-danger btn-sm' (click)="deleteAuthor(author.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
